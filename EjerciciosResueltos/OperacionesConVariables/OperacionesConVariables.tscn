@@ -1,0 +1,243 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://OperacionesConVariables.gd" type="Script" id=1]
+
+[node name="OperacionesConVariables" type="Control" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+script = ExtResource( 1 )
+
+[node name="Num1" type="LineEdit" parent="." index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 50.0
+margin_top = 231.0
+margin_right = 108.0
+margin_bottom = 255.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Num2" type="LineEdit" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 493.0
+margin_top = 231.0
+margin_right = 551.0
+margin_bottom = 255.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 1
+size_flags_horizontal = 1
+size_flags_vertical = 1
+focus_mode = 2
+context_menu_enabled = true
+placeholder_alpha = 0.6
+caret_blink = false
+caret_blink_speed = 0.65
+caret_position = 0
+_sections_unfolded = [ "Rect" ]
+
+[node name="Operador" type="Label" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 309.0
+margin_top = 248.0
+margin_right = 349.0
+margin_bottom = 262.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+align = 1
+valign = 1
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Resultado" type="Label" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 798.0
+margin_top = 248.0
+margin_right = 838.0
+margin_bottom = 262.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 2
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 4
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Suma" type="Button" parent="." index="4"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 201.0
+margin_top = 485.0
+margin_right = 231.0
+margin_bottom = 505.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "+"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Resta" type="Button" parent="." index="5"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 368.0
+margin_top = 485.0
+margin_right = 398.0
+margin_bottom = 505.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "-"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Multiplicacion" type="Button" parent="." index="6"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 540.0
+margin_top = 485.0
+margin_right = 570.0
+margin_bottom = 505.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "*"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="Division" type="Button" parent="." index="7"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 701.0
+margin_top = 485.0
+margin_right = 731.0
+margin_bottom = 505.0
+rect_scale = Vector2( 4, 4 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+text = "/"
+flat = false
+align = 1
+_sections_unfolded = [ "Rect" ]
+
+[connection signal="focus_entered" from="Suma" to="." method="_on_Suma_focus_entered"]
+
+[connection signal="mouse_entered" from="Suma" to="." method="_on_Suma_mouse_entered"]
+
+[connection signal="pressed" from="Suma" to="." method="_on_Suma_pressed"]
+
+[connection signal="mouse_entered" from="Resta" to="." method="_on_Resta_mouse_entered"]
+
+[connection signal="pressed" from="Resta" to="." method="_on_Resta_pressed"]
+
+[connection signal="mouse_entered" from="Multiplicacion" to="." method="_on_Multiplicacion_mouse_entered"]
+
+[connection signal="pressed" from="Multiplicacion" to="." method="_on_Multiplicacion_pressed"]
+
+[connection signal="mouse_entered" from="Division" to="." method="_on_Division_mouse_entered"]
+
+[connection signal="pressed" from="Division" to="." method="_on_Division_pressed"]
+
+
