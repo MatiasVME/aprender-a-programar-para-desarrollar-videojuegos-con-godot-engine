@@ -1,0 +1,53 @@
+[gd_scene load_steps=5 format=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+
+custom_solver_bias = 0.0
+a = Vector2( 0, 0 )
+b = Vector2( 0, 600 )
+
+[sub_resource type="SegmentShape2D" id=2]
+
+custom_solver_bias = 0.0
+a = Vector2( 1000, 600 )
+b = Vector2( 0, 600 )
+
+[sub_resource type="SegmentShape2D" id=3]
+
+custom_solver_bias = 0.0
+a = Vector2( 1000, 600 )
+b = Vector2( 1000, 0 )
+
+[sub_resource type="SegmentShape2D" id=4]
+
+custom_solver_bias = 0.0
+a = Vector2( 0, 0 )
+b = Vector2( 1000, 0 )
+
+[node name="Bordes" type="StaticBody2D"]
+
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 1.0
+bounce = 0.0
+
+[node name="Borde1" type="CollisionShape2D" parent="." index="0"]
+
+shape = SubResource( 1 )
+
+[node name="Borde2" type="CollisionShape2D" parent="." index="1"]
+
+shape = SubResource( 2 )
+
+[node name="Borde3" type="CollisionShape2D" parent="." index="2"]
+
+shape = SubResource( 3 )
+
+[node name="Borde4" type="CollisionShape2D" parent="." index="3"]
+
+shape = SubResource( 4 )
+
+
