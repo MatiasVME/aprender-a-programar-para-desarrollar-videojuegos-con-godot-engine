@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://b51q6xeg4gthp"]
+
+[ext_resource type="Texture2D" uid="uid://b5a8rv0532bbp" path="res://Game/Players/Blue/playerShip1_blue.png" id="1_6pm8v"]
+[ext_resource type="Script" path="res://Game/Players/Player.gd" id="1_pewy0"]
+[ext_resource type="AudioStream" uid="uid://b6g3xsosx11nw" path="res://Sounds/SFX/LaserPlayer.ogg" id="3_0rwqg"]
+[ext_resource type="AudioStream" uid="uid://ckr6fhmjkb43g" path="res://Sounds/SFX/PlayerExplosion.ogg" id="4_028f0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kq478"]
+radius = 30.0
+
+[sub_resource type="Animation" id="Animation_3dthj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_vm2ro"]
+resource_name = "dead"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(2, 1),
+"update": 0,
+"values": [0.0, 12.5664]
+}
+
+[sub_resource type="Animation" id="Animation_vrc7q"]
+resource_name = "show"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(2, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_buk0b"]
+_data = {
+"RESET": SubResource("Animation_3dthj"),
+"dead": SubResource("Animation_vm2ro"),
+"show": SubResource("Animation_vrc7q")
+}
+
+[node name="Player" type="Area2D"]
+script = ExtResource("1_pewy0")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_6pm8v")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_kq478")
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "show"
+libraries = {
+"": SubResource("AnimationLibrary_buk0b")
+}
+
+[node name="BulletSpawn" type="Marker2D" parent="."]
+position = Vector2(0, -55)
+
+[node name="Laser" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0rwqg")
+
+[node name="Explosion" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_028f0")
+
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]

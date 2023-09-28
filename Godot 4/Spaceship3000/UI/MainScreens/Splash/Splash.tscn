@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://b3t8kd61wjitq"]
+
+[ext_resource type="Script" path="res://UI/MainScreens/Splash/Splash.gd" id="1_xipwu"]
+[ext_resource type="Texture2D" uid="uid://b8pklt5b1wj2e" path="res://UI/Backgrounds/black.png" id="2_n6gba"]
+[ext_resource type="FontFile" uid="uid://d4lwwgbtr4u4d" path="res://UI/Fonts/kenvector_future.ttf" id="3_27lam"]
+[ext_resource type="AudioStream" uid="uid://dgr1yso65xnnl" path="res://Sounds/BGM/Intro.ogg" id="4_6qwwc"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_83vhw"]
+font = ExtResource("3_27lam")
+font_size = 52
+font_color = Color(0, 0.74902, 0.74902, 1)
+
+[node name="Splash" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_xipwu")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_n6gba")
+stretch_mode = 1
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameOver" type="Label" parent="Center"]
+layout_mode = 2
+text = "THE COMPANY
+NAME"
+label_settings = SubResource("LabelSettings_83vhw")
+horizontal_alignment = 1
+
+[node name="SplashMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_6qwwc")
+autoplay = true

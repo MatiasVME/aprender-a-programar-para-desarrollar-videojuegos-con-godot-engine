@@ -1,0 +1,60 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmenekfbymybi"]
+
+[ext_resource type="Texture2D" uid="uid://b8pklt5b1wj2e" path="res://UI/Backgrounds/black.png" id="1_epyk7"]
+[ext_resource type="Script" path="res://UI/MainScreens/Credits/Credits.gd" id="1_vgaxh"]
+[ext_resource type="FontFile" uid="uid://cdl60ysr0ohag" path="res://UI/Fonts/kenvector_future_thin.ttf" id="2_u6w3o"]
+[ext_resource type="FontFile" uid="uid://d4lwwgbtr4u4d" path="res://UI/Fonts/kenvector_future.ttf" id="3_lix2y"]
+
+[node name="Credits" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vgaxh")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_epyk7")
+stretch_mode = 1
+
+[node name="Margin" type="CenterContainer" parent="Background"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -0.5
+offset_right = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Credits" type="RichTextLabel" parent="Background/Margin"]
+custom_minimum_size = Vector2(400, 100)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("2_u6w3o")
+theme_override_fonts/bold_font = ExtResource("3_lix2y")
+bbcode_enabled = true
+text = "[center][b][color=blue]Credits[/color][/b]
+
+[b][color=orange]Programmer / Game Design[/color][/b]
+[color=green]Matías Muñoz Esponza[/color]
+[/center]"
+
+[node name="Back" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[connection signal="gui_input" from="Background/Margin/Credits" to="." method="_on_credits_gui_input"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

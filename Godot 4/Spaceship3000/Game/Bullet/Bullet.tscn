@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://buik523d2gy73"]
+
+[ext_resource type="Texture2D" uid="uid://eykurwsms53v" path="res://Game/Bullet/Sprites/laserBlue04.png" id="1_61vs0"]
+[ext_resource type="Script" path="res://Game/Bullet/Bullet.gd" id="1_frxog"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w74lf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_61vs0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx487"]
+size = Vector2(12, 32)
+
+[sub_resource type="Animation" id="Animation_8e88f"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pga2a"]
+resource_name = "destroy"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.3, 1.3), Vector2(1e-05, 1e-05)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprites:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_oy684"]
+resource_name = "show"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprites:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(1e-05, 1e-05), Vector2(1.3, 1.3), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k34ml"]
+_data = {
+"RESET": SubResource("Animation_8e88f"),
+"destroy": SubResource("Animation_pga2a"),
+"show": SubResource("Animation_oy684")
+}
+
+[node name="Bullet" type="Area2D"]
+z_index = 1
+script = ExtResource("1_frxog")
+
+[node name="Sprites" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w74lf")
+frame_progress = 0.212586
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_nx487")
+
+[node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
+
+[node name="Anim" type="AnimationPlayer" parent="."]
+autoplay = "show"
+libraries = {
+"": SubResource("AnimationLibrary_k34ml")
+}
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]
+[connection signal="animation_finished" from="Anim" to="." method="_on_anim_animation_finished"]

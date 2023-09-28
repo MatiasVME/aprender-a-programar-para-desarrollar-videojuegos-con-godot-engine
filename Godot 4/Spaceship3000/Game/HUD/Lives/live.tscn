@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://c6pntqo6qifal"]
+
+[ext_resource type="Texture2D" uid="uid://he1ledq7qj1v" path="res://Game/HUD/Lives/playerLife1_blue.png" id="1_exo33"]
+[ext_resource type="Texture2D" uid="uid://doblp4hj5teuj" path="res://Game/HUD/Lives/playerLife2_blue.png" id="2_ek8cm"]
+[ext_resource type="Texture2D" uid="uid://cs7v54pjgtuhe" path="res://Game/HUD/Lives/playerLife3_blue.png" id="3_o1gbw"]
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_l0cqv"]
+frames = 3
+pause = true
+frame_0/texture = ExtResource("1_exo33")
+frame_1/texture = ExtResource("2_ek8cm")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("3_o1gbw")
+frame_2/duration = 1.0
+
+[node name="Live" type="TextureRect"]
+visible = false
+size_flags_horizontal = 0
+texture = SubResource("AnimatedTexture_l0cqv")
+expand_mode = 2
+stretch_mode = 3

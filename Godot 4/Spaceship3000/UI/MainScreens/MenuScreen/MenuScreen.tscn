@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://cdywikw2bc7ql"]
+
+[ext_resource type="Texture2D" uid="uid://b8pklt5b1wj2e" path="res://UI/Backgrounds/black.png" id="1_7cv06"]
+[ext_resource type="Script" path="res://UI/MainScreens/MenuScreen/MenuScreen.gd" id="1_wdk6w"]
+[ext_resource type="FontFile" uid="uid://d4lwwgbtr4u4d" path="res://UI/Fonts/kenvector_future.ttf" id="2_3eotq"]
+[ext_resource type="Texture2D" uid="uid://cxh570k2ms153" path="res://UI/Buttons/buttonBlue.png" id="3_34dda"]
+[ext_resource type="Texture2D" uid="uid://rdpd32ms7qj4" path="res://UI/Buttons/buttonYellow.png" id="4_i3pjs"]
+[ext_resource type="Texture2D" uid="uid://bsr7g6xfuhggu" path="res://UI/Buttons/buttonGreen.png" id="5_lstm4"]
+[ext_resource type="AudioStream" uid="uid://c5hkvxuki8j0w" path="res://Sounds/BGM/Menu.ogg" id="7_hfp72"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_duq4h"]
+font = ExtResource("2_3eotq")
+font_size = 52
+font_color = Color(0, 0.74902, 0.74902, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_57s1e"]
+font = ExtResource("2_3eotq")
+font_size = 32
+font_color = Color(0.858824, 0.588235, 0.364706, 1)
+
+[node name="MenuScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wdk6w")
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_7cv06")
+
+[node name="Center" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Center"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Title" type="Label" parent="Center/VBox"]
+layout_mode = 2
+text = "SPACESHIP 3000"
+label_settings = SubResource("LabelSettings_duq4h")
+
+[node name="Play" type="TextureButton" parent="Center/VBox"]
+layout_mode = 2
+texture_normal = ExtResource("3_34dda")
+texture_pressed = ExtResource("4_i3pjs")
+texture_hover = ExtResource("5_lstm4")
+stretch_mode = 5
+
+[node name="PlayText" type="Label" parent="Center/VBox/Play"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Play"
+label_settings = SubResource("LabelSettings_57s1e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Credits" type="TextureButton" parent="Center/VBox"]
+layout_mode = 2
+texture_normal = ExtResource("3_34dda")
+texture_pressed = ExtResource("4_i3pjs")
+texture_hover = ExtResource("5_lstm4")
+stretch_mode = 5
+
+[node name="CreditsText" type="Label" parent="Center/VBox/Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits"
+label_settings = SubResource("LabelSettings_57s1e")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MenuMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_hfp72")
+volume_db = -10.0
+autoplay = true
+
+[connection signal="pressed" from="Center/VBox/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Center/VBox/Credits" to="." method="_on_credits_pressed"]

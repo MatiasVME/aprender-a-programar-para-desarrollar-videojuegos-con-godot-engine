@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://vswkotewdkj8"]
+
+[ext_resource type="Script" path="res://Game/Levels/Level.gd" id="1_jo8yb"]
+[ext_resource type="Texture2D" uid="uid://yydgi7xwjmrp" path="res://UI/Backgrounds/blue.png" id="2_83fuc"]
+[ext_resource type="AudioStream" uid="uid://bcswn1530phbj" path="res://Sounds/BGM/Level.ogg" id="4_fdx5v"]
+[ext_resource type="PackedScene" uid="uid://7d76tlg2ifhc" path="res://Game/HUD/HUD.tscn" id="5_fbup6"]
+
+[node name="Level" type="Node2D"]
+script = ExtResource("1_jo8yb")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 720.0
+offset_bottom = 720.0
+mouse_filter = 2
+texture = ExtResource("2_83fuc")
+stretch_mode = 1
+
+[node name="Enemies" type="Node" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="ZOrder" type="Node2D" parent="."]
+z_index = 5
+
+[node name="HUD" parent="ZOrder" instance=ExtResource("5_fbup6")]
+custom_minimum_size = Vector2(720, 720)
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_right = 720.0
+offset_bottom = 720.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="LevelMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_fdx5v")
+volume_db = -15.0
+autoplay = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
