@@ -1,26 +1,7 @@
-[gd_scene load_steps=31 format=3 uid="uid://caqm3mnfdkd3"]
+[gd_scene load_steps=12 format=3 uid="uid://caqm3mnfdkd3"]
 
 [ext_resource type="Script" path="res://Game/Enemies/Enemy.gd" id="1_dqgwq"]
 [ext_resource type="Texture2D" uid="uid://b6ekc8u7p3l6i" path="res://Game/Enemies/EnemySkin/enemyBlack1.png" id="2_q8vpd"]
-[ext_resource type="Texture2D" uid="uid://c4yxteib7umet" path="res://Game/Enemies/EnemySkin/enemyBlack2.png" id="3_pl2pu"]
-[ext_resource type="Texture2D" uid="uid://ct3dm3y54cs7b" path="res://Game/Enemies/EnemySkin/enemyBlack3.png" id="4_2sd70"]
-[ext_resource type="Texture2D" uid="uid://c4gaujxifwofr" path="res://Game/Enemies/EnemySkin/enemyBlack4.png" id="5_23uke"]
-[ext_resource type="Texture2D" uid="uid://bnto27tl0h428" path="res://Game/Enemies/EnemySkin/enemyBlack5.png" id="6_ujsc0"]
-[ext_resource type="Texture2D" uid="uid://3e703r4es40k" path="res://Game/Enemies/EnemySkin/enemyBlue1.png" id="7_dfbed"]
-[ext_resource type="Texture2D" uid="uid://dudc8f076vqqw" path="res://Game/Enemies/EnemySkin/enemyBlue2.png" id="8_tcxpr"]
-[ext_resource type="Texture2D" uid="uid://cg5yr4novwyye" path="res://Game/Enemies/EnemySkin/enemyBlue3.png" id="9_bkonb"]
-[ext_resource type="Texture2D" uid="uid://mv6idbo51exs" path="res://Game/Enemies/EnemySkin/enemyBlue4.png" id="10_rva8b"]
-[ext_resource type="Texture2D" uid="uid://bgpuoxctk8d6h" path="res://Game/Enemies/EnemySkin/enemyBlue5.png" id="11_yidk5"]
-[ext_resource type="Texture2D" uid="uid://dlcq3r007xcs4" path="res://Game/Enemies/EnemySkin/enemyGreen1.png" id="12_4haio"]
-[ext_resource type="Texture2D" uid="uid://bhop4h4cu0cw6" path="res://Game/Enemies/EnemySkin/enemyGreen2.png" id="13_c0g2d"]
-[ext_resource type="Texture2D" uid="uid://cem5fja4g7eg3" path="res://Game/Enemies/EnemySkin/enemyGreen3.png" id="14_u3v1h"]
-[ext_resource type="Texture2D" uid="uid://dt0mucam5q781" path="res://Game/Enemies/EnemySkin/enemyGreen4.png" id="15_migi6"]
-[ext_resource type="Texture2D" uid="uid://brbgis3e2fxp0" path="res://Game/Enemies/EnemySkin/enemyGreen5.png" id="16_huiem"]
-[ext_resource type="Texture2D" uid="uid://cljnwcus1lld1" path="res://Game/Enemies/EnemySkin/enemyRed1.png" id="17_5w44a"]
-[ext_resource type="Texture2D" uid="uid://bd4xbc1cj86w7" path="res://Game/Enemies/EnemySkin/enemyRed2.png" id="18_nh3j6"]
-[ext_resource type="Texture2D" uid="uid://b4hps66h86blx" path="res://Game/Enemies/EnemySkin/enemyRed3.png" id="19_2k1ge"]
-[ext_resource type="Texture2D" uid="uid://dyn7rvo366i0d" path="res://Game/Enemies/EnemySkin/enemyRed4.png" id="20_03fp3"]
-[ext_resource type="Texture2D" uid="uid://6xpqnvyx33do" path="res://Game/Enemies/EnemySkin/enemyRed5.png" id="21_hfp36"]
 [ext_resource type="AudioStream" uid="uid://bwap2p75kb4ja" path="res://Sounds/SFX/EnemyDead.ogg" id="22_r08fn"]
 [ext_resource type="AudioStream" uid="uid://dqdfrfk7n2qlq" path="res://Sounds/SFX/EnemyLaser.ogg" id="23_eljx0"]
 
@@ -29,63 +10,6 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_q8vpd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("3_pl2pu")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_2sd70")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_23uke")
-}, {
-"duration": 1.0,
-"texture": ExtResource("6_ujsc0")
-}, {
-"duration": 1.0,
-"texture": ExtResource("7_dfbed")
-}, {
-"duration": 1.0,
-"texture": ExtResource("8_tcxpr")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_bkonb")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_rva8b")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_yidk5")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_4haio")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_c0g2d")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_u3v1h")
-}, {
-"duration": 1.0,
-"texture": ExtResource("15_migi6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("16_huiem")
-}, {
-"duration": 1.0,
-"texture": ExtResource("17_5w44a")
-}, {
-"duration": 1.0,
-"texture": ExtResource("18_nh3j6")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_2k1ge")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_03fp3")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_hfp36")
 }],
 "loop": true,
 "name": &"level",

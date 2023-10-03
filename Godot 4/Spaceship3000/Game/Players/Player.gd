@@ -19,6 +19,7 @@ var one_time_dead := true
 
 var time := 0.0
 
+
 func _process(delta):
 	movement_and_inputs(delta)
 	fire_bullets(delta)
