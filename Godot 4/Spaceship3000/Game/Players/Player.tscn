@@ -96,10 +96,10 @@ texture = ExtResource("1_6pm8v")
 shape = SubResource("CircleShape2D_kq478")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "show"
 libraries = {
 "": SubResource("AnimationLibrary_buk0b")
 }
+autoplay = "show"
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
 position = Vector2(0, -55)

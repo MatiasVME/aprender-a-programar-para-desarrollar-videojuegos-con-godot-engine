@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://buik523d2gy73"]
 
 [ext_resource type="Texture2D" uid="uid://eykurwsms53v" path="res://Game/Bullet/Sprites/laserBlue04.png" id="1_61vs0"]
-[ext_resource type="Script" path="res://Game/Bullet/Bullet.gd" id="1_frxog"]
+[ext_resource type="Script" path="res://Game/Bullet/Bullet.gd" id="1_b0inn"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w74lf"]
 animations = [{
@@ -97,7 +97,7 @@ _data = {
 
 [node name="Bullet" type="Area2D"]
 z_index = 1
-script = ExtResource("1_frxog")
+script = ExtResource("1_b0inn")
 
 [node name="Sprites" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_w74lf")
@@ -109,10 +109,10 @@ shape = SubResource("RectangleShape2D_nx487")
 [node name="VisibleOnScreenEnabler2D" type="VisibleOnScreenEnabler2D" parent="."]
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "show"
 libraries = {
 "": SubResource("AnimationLibrary_k34ml")
 }
+autoplay = "show"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenEnabler2D" to="." method="_on_visible_on_screen_enabler_2d_screen_exited"]

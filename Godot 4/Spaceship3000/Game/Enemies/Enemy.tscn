@@ -82,15 +82,15 @@ _data = {
 }
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_gc7lf"]
-streams_count = 1
 playback_mode = 1
 random_volume_offset_db = 3.81
+streams_count = 1
 stream_0/stream = ExtResource("22_r08fn")
 stream_0/weight = 1.0
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_ro4mc"]
-streams_count = 1
 playback_mode = 1
+streams_count = 1
 stream_0/stream = ExtResource("23_eljx0")
 stream_0/weight = 1.0
 
@@ -106,10 +106,10 @@ speed_scale = 0.0
 shape = SubResource("CircleShape2D_aiixx")
 
 [node name="Anim" type="AnimationPlayer" parent="."]
-autoplay = "show"
 libraries = {
 "": SubResource("AnimationLibrary_k2g77")
 }
+autoplay = "show"
 
 [node name="BulletSpawn" type="Marker2D" parent="."]
 position = Vector2(0, 39)

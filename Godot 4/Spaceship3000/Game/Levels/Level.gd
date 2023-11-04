@@ -19,11 +19,11 @@ func _ready():
 
 
 func _input(event):
-#	# Para testeo de la vidas
-#	if event.is_action_pressed("+"):
-#		Main.lives += 1
-#	elif event.is_action_pressed("-"):
-#		Main.lives -= 1
+	# Para testeo de la vidas
+	if event.is_action_pressed("+"):
+		Main.lives += 1
+	elif event.is_action_pressed("-"):
+		Main.lives -= 1
 	pass
 
 
