@@ -11,7 +11,3 @@ https://www.udemy.com/course/aprender-a-programar-para-desarrollar-videojuegos-c
 **Desarrollo de Videojuegos en español**
 
 https://discord.com/invite/rnKsrZ9
-
-**Godot Engine Hispano**
-
-https://discord.gg/cUMSc8SDXR
