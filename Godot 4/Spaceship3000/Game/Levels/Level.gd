@@ -24,7 +24,6 @@ func _input(event):
 		Main.lives += 1
 	elif event.is_action_pressed("-"):
 		Main.lives -= 1
-	pass
 
 
 func spawn_player():
