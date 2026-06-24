@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b5a683qwnbhwa"]
+
+[ext_resource type="Script" uid="uid://bhon0vp7t3sat" path="res://conceptos_basicos_2.gd" id="1_ilfys"]
+
+[node name="ConceptosBasicos2" type="Node" unique_id=1734794080]
+script = ExtResource("1_ilfys")
