@@ -1,7 +1,7 @@
 extends Node
 
 ## Inferencia en tipado
-## Tipádo dinámico v/s tipádo estático
+## Tipado dinámico v/s tipado estático
 ## Operaciones con variables
 ## Concatenación
 
