@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cleragi2o3n8p"]
+
+[ext_resource type="Script" uid="uid://dlb2fbtiwcbgc" path="res://estructuras_de_control.gd" id="1_gltcx"]
+
+[node name="EstructurasDeControl" type="Node" unique_id=436814348]
+script = ExtResource("1_gltcx")
